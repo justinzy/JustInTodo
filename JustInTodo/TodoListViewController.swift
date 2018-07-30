@@ -14,13 +14,18 @@ class TodoListViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        if let items = defaults.array(forKey: "TodoListArray") as? [String] {
+            itemArray = items
+        }
     }
     
     // MARK: - Init variables/constants
     
+    
+    let defaults = UserDefaults.standard
+
     var itemArray : [String] = []
     
-
     //MARK: - TableView DataSource Methods
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -69,6 +74,9 @@ class TodoListViewController: UITableViewController {
             if let tfText = textField.text {
                 
                 self.itemArray.append(tfText)
+                
+                self.defaults.set(self.itemArray, forKey: "TodoListArray")
+                
                 self.tableView.reloadData()
             } else {
                 print("text field is empty!")
