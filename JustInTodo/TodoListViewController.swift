@@ -10,12 +10,16 @@ import UIKit
 
 class TodoListViewController: UITableViewController {
     
-    let itemArray = ["Find a girl friend", "Buy some fruit", "Get a good job"]
-    
+    // MARK: - view did load
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
+    
+    // MARK: - Init variables/constants
+    
+    var itemArray : [String] = []
+    
 
     //MARK: - TableView DataSource Methods
     
@@ -50,7 +54,51 @@ class TodoListViewController: UITableViewController {
         print(itemArray[indexPath.row])
     }
     
+    //MARK: - Add new item methods
     
+    @IBAction func AddButtonPressed(_ sender: UIBarButtonItem) {
+        
+        var textField = UITextField()
+        
+        let alert = UIAlertController(title: "Add new todo item", message: "Add a new item here", preferredStyle: .alert)
+        
+        // the button that allow user to press and then the action it will make.
+        let addItemAction = UIAlertAction(title: "Add item", style: .default) {(action) in
+            
+            // what will happen once the user clicks the Add item button on our UIAlert
+            if let tfText = textField.text {
+                
+                self.itemArray.append(tfText)
+                self.tableView.reloadData()
+            } else {
+                print("text field is empty!")
+            }
+        }
+        
+        // add text field in Alert view
+        alert.addTextField { (alertTextField) in
+            alertTextField.placeholder = "Create new item"
+            alertTextField.text = nil
+            alertTextField.addTarget(self, action: #selector(self.alertTextFieldDidChange(field:)), for: UIControlEvents.editingChanged)
+            textField = alertTextField
+        }
+        
+        addItemAction.isEnabled = false
+        alert.addAction(addItemAction)
+        alert.addAction(UIAlertAction(title: "Cancel", style: .destructive))
+        
+        present(alert, animated: true, completion: nil)
+        
+    }
+    
+    // The listener for alert text field to judge if the textfield is empty or not.
+    @objc func alertTextFieldDidChange(field: UITextField) {
+        let alertControllor : UIAlertController = self.presentedViewController as! UIAlertController
+        let textField : UITextField = alertControllor.textFields![0]
+        let addAction : UIAlertAction = alertControllor.actions[0]
+        let textLength = textField.text?.count
+        addAction.isEnabled = textLength! > 0
+    }
 
 }
 

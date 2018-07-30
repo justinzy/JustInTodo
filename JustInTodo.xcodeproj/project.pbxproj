@@ -12,6 +12,7 @@
 		D05F470E210D275000C5504E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D05F470C210D275000C5504E /* Main.storyboard */; };
 		D05F4710210D275200C5504E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D05F470F210D275200C5504E /* Assets.xcassets */; };
 		D05F4713210D275200C5504E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D05F4711210D275200C5504E /* LaunchScreen.storyboard */; };
+		D05F471C210FB4ED00C5504E /* ShakeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05F471B210FB4ED00C5504E /* ShakeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		D05F470F210D275200C5504E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D05F4712210D275200C5504E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D05F4714210D275200C5504E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D05F471B210FB4ED00C5504E /* ShakeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShakeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,8 +62,17 @@
 				D05F470F210D275200C5504E /* Assets.xcassets */,
 				D05F4711210D275200C5504E /* LaunchScreen.storyboard */,
 				D05F4714210D275200C5504E /* Info.plist */,
+				D05F471A210FB49E00C5504E /* UIExtension */,
 			);
 			path = JustInTodo;
+			sourceTree = "<group>";
+		};
+		D05F471A210FB49E00C5504E /* UIExtension */ = {
+			isa = PBXGroup;
+			children = (
+				D05F471B210FB4ED00C5504E /* ShakeViewController.swift */,
+			);
+			path = UIExtension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,6 +146,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D05F471C210FB4ED00C5504E /* ShakeViewController.swift in Sources */,
 				D05F470B210D275000C5504E /* TodoListViewController.swift in Sources */,
 				D05F4709210D275000C5504E /* AppDelegate.swift in Sources */,
 			);
