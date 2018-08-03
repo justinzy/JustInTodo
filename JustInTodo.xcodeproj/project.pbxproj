@@ -13,6 +13,7 @@
 		D05F4710210D275200C5504E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D05F470F210D275200C5504E /* Assets.xcassets */; };
 		D05F4713210D275200C5504E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D05F4711210D275200C5504E /* LaunchScreen.storyboard */; };
 		D05F471C210FB4ED00C5504E /* ShakeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05F471B210FB4ED00C5504E /* ShakeViewController.swift */; };
+		D05F471F2112515900C5504E /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05F471E2112515900C5504E /* Item.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		D05F4712210D275200C5504E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D05F4714210D275200C5504E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D05F471B210FB4ED00C5504E /* ShakeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShakeViewController.swift; sourceTree = "<group>"; };
+		D05F471E2112515900C5504E /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +43,7 @@
 			isa = PBXGroup;
 			children = (
 				D05F4707210D275000C5504E /* JustInTodo */,
+				D05F4714210D275200C5504E /* Info.plist */,
 				D05F4706210D275000C5504E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -57,11 +60,10 @@
 			isa = PBXGroup;
 			children = (
 				D05F4708210D275000C5504E /* AppDelegate.swift */,
-				D05F470A210D275000C5504E /* TodoListViewController.swift */,
-				D05F470C210D275000C5504E /* Main.storyboard */,
-				D05F470F210D275200C5504E /* Assets.xcassets */,
-				D05F4711210D275200C5504E /* LaunchScreen.storyboard */,
-				D05F4714210D275200C5504E /* Info.plist */,
+				D05F471D2112513100C5504E /* Model */,
+				D05F47212112519E00C5504E /* Controller */,
+				D05F47202112518C00C5504E /* View */,
+				D05F4722211251CD00C5504E /* Supporting File */,
 				D05F471A210FB49E00C5504E /* UIExtension */,
 			);
 			path = JustInTodo;
@@ -73,6 +75,39 @@
 				D05F471B210FB4ED00C5504E /* ShakeViewController.swift */,
 			);
 			path = UIExtension;
+			sourceTree = "<group>";
+		};
+		D05F471D2112513100C5504E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D05F471E2112515900C5504E /* Item.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D05F47202112518C00C5504E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D05F470C210D275000C5504E /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D05F47212112519E00C5504E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D05F470A210D275000C5504E /* TodoListViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D05F4722211251CD00C5504E /* Supporting File */ = {
+			isa = PBXGroup;
+			children = (
+				D05F470F210D275200C5504E /* Assets.xcassets */,
+				D05F4711210D275200C5504E /* LaunchScreen.storyboard */,
+			);
+			path = "Supporting File";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -146,6 +181,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D05F471F2112515900C5504E /* Item.swift in Sources */,
 				D05F471C210FB4ED00C5504E /* ShakeViewController.swift in Sources */,
 				D05F470B210D275000C5504E /* TodoListViewController.swift in Sources */,
 				D05F4709210D275000C5504E /* AppDelegate.swift in Sources */,
@@ -294,7 +330,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 673R37VZ2N;
-				INFOPLIST_FILE = JustInTodo/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -312,7 +348,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 673R37VZ2N;
-				INFOPLIST_FILE = JustInTodo/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
